@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <h3>test</h3>
+    <table id="table" border="1">
+        <tr>
+            <th>Row</th>
+            <th>Column</th>
+        </tr>
+
+    </table>
+    <script>
+        const arrayMatrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+
+        const table = document.getElementById("table");
+        
+        for(let i = 0; i < arrayMatrix.length; i++) {
+            
+            // Membuat baris baru untuk setiap array dalam arrayMatrix
+            let row = document.createElement("tr");
+            table.appendChild(row);
+            row.id = "row" + (i + 1);
+
+
+            for(let j = 0; j < arrayMatrix[i].length; j++) {
+                // Menampilkan setiap elemen dalam baris
+                let column = document.createElement("td");
+                column.id = "column" + (j + 1);
+                row.appendChild(column);
+                column.textContent = arrayMatrix[i][j];
+                document.write("Kolom <td> " + (j + 1) + ": </td>");
+                document.write(arrayMatrix[i][j] + " ");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>

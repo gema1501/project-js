@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Variable</title>
+</head>
+<body>
+
+    <h1>Test Variable</h1>
+    <script>
+        /* Deklarasi variable */
+        let nama = 'John'; // string variable
+
+        // Deklarasi variable dengan keyword var
+        var namaLengkap = "John Doe";  
+        let lahir = "Jakarta"; // string variable
+
+        /* Akan ditampilkan di web browser */
+        document.write("Nama : " + nama + "<br>"); // + untuk menggabungkan string
+        document.write("Lahir : " + lahir + "<br>");
+
+        // array 2d
+        let array2d = [
+            ["John", "Doe"],
+            ["Jane", "Doe"]
+        ];
+
+        // array 3d
+        let array3d = [
+            [
+                [1, 2],
+                [3, 4]
+            ],
+            [
+                [5, 6],
+                [7, 8]
+            ]
+        ];
+
+        console.log(array3d);
+        document.write("Array 2D: " + array2d + "<br>");
+    </script>
+
+<br>
+<br>
+<br>
+
+<h3>Array Matrix</h3>
+<table>
+    <tr id="row">
+        <td id="column"></td>
+    </tr>
+</table>
+    <script>
+        // array matrix
+        let arrayMatrix = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+
+        console.log(arrayMatrix);
+
+        // let row = document.getElementById("row");
+        // let column = document.getElementById("column");
+
+        document.write("Array Matrix" + arrayMatrix + "<br>");
+        for(let i = 0; i < arrayMatrix.length; i++) {
+
+            // Membuat baris baru untuk setiap array dalam arrayMatrix
+            document.write("Baris <tr> " + (i + 1) + ": </tr>");
+
+
+            for(let j = 0; j < arrayMatrix[i].length; j++) {
+                // Menampilkan setiap elemen dalam baris
+                document.write("Kolom <td> " + (j + 1) + ": </td>");
+                document.write(arrayMatrix[i][j] + " ");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>

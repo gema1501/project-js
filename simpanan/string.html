@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS String</title>
+</head>
+<body>
+    <!--
+        Cara melakukan run and debug
+        1. tandai baris script yang ingin dilakukan debug dengan cara menambahkan breakpoint (breakpoint pertama ialah awal baris script yang ingin di debug)
+        2. tandai baris script selanjutnya yang ingin dilakukan debug dengan cara menambahkan breakpoint (breakpoint kedua ialah akhir baris script yang ingin di debug)
+        3. jalankan run and debug dengan cara menekan tombol F5 pada keyboard atau kita bisa lakukan secara manual dengan mengklik icon "Run and Debug" pada toolbar di sebelah kiri
+        4. setelah itu akan muncul jendela baru lalu klik tombol "Run and Debug" pada jendela tersebut
+        5. maka akan muncul jendela baru lagi (me-replace jendela sebelumnya) yang berisi hasil dari run and debug dan juga debug toolbar yang berguna untuk mengontrol jalannya script berdasarkan breakpoint yang telah kita buat
+    -->
+    <script>
+        // deklarasi variable 
+        let helloText;
+        // inisialisasi variable
+        helloText = "Hello, World!";
+        document.write("Text: " + helloText + "<br>");
+
+        // menimpa value dari variable helloText dengan value baru
+        helloText = "Good morning!";
+        document.write("Text: " + helloText + "<br>");
+
+        // deklarasi dan inisialisasi variable sekaligus
+        let text2 = "Declaration and value";
+        document.write("Text: " + text2 + "<br>");
+
+        // deklarasi dan inisialisasi variable text3 dengan single quotation marks
+        let text3 = 'With single quotation marks';
+        document.write("Text: " + text3 + "<br>");
+
+        // deklarasi variable tanpa inisialisasi
+        let text4;
+        document.write("Text: " + text4 + "<br>"); // output: undefined, karena variable text3 hanya dideklarasikan tapi belum diinisialisasi
+
+
+        // document.write("Text: " + text5 + "<br>"); // ini akan error karena text5 belum dideklarasikan tapi sudah kita panggil, output: Uncaught ReferenceError: text5 is not defined
+
+        // text5 = "No declaration"; // ini akan error juga karena kita mencoba menginisialisasi variable yang belum dideklarasikan, output: Uncaught ReferenceError: text5 is not defined
+
+        // document.write("Text: " + text5 + "<br>"); // ini akan error juga karena kita mencoba menampilkan variable yang belum dideklarasikan, output: Uncaught ReferenceError: text5 is not defined
+
+        // deklarasi variable dengan keyword const
+        const text6 = "Cannot be changed";
+        document.write("Text: " + text6 + "<br>");
+        // text6 = "Not allowed"; // ini tidak bisa dilakukan karena text6 adalah konstanta, output: Uncaught TypeError: Assignment to constant variable.
+        document.write("End");
+    </script>
+</body>
+</html>

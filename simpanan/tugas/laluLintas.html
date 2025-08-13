@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Lampu Lalu Lintas</title>
+</head>
+<body>
+    <!-- <h1>Simulasi Lampu Lalu Lintas</h1>
+    <p>Masukkan status lampu lalu lintas untuk melihat instruksi yang sesuai.</p>
+    <form id="lampuForm" onsubmit="formClick(event)">
+        <label for="statusLampu">Status Lampu (merah, kuning, hijau):</label>
+        <select name="statusLampu" id="statusLampu">
+            <option disabled>Pilih status lampu</option>
+            <option value="merah">Merah</option>
+            <option value="kuning">Kuning</option>
+            <option value="hijau">Hijau</option>
+        </select>
+        <button type="submit">Cek Status</button>
+    </form>
+    <div id="hasil">
+        
+    </div> -->
+    <script>
+        // function formClick(e) {
+        //     e.preventDefault();
+
+        //     const statusLampu = e.target.statusLampu.value.toLowerCase();
+        //     const hasilElement = document.getElementById("hasil");
+        //     if (statusLampu === "merah") {
+        //         hasilElement.textContent = "Lampu merah, silakan berhenti.";
+        //     } else if (statusLampu === "kuning") {
+        //         hasilElement.textContent = "Lampu kuning, bersiap-siap untuk berhenti.";
+        //     } else if (statusLampu === "hijau") {
+        //         hasilElement.textContent = "Lampu hijau, silakan jalan.";
+        //     } else {
+        //         hasilElement.textContent = "Status lampu tidak dikenali. Silakan pilih 'merah', 'kuning', atau 'hijau'.";
+        //     }
+        // }
+
+        const lampuMerah = "Merah";
+        const lampuKuning = "Kuning";
+        const lampuHijau = "Hijau";
+
+        let statusLampu = prompt("Masukkan status lampu (merah, kuning, hijau):").toLowerCase();
+
+        if (statusLampu === lampuMerah.toLowerCase()) {
+            alert("Lampu merah, silakan berhenti.");
+        } else if (statusLampu === lampuKuning.toLowerCase()) {
+            alert("Lampu kuning, bersiap-siap untuk berhenti.");
+        } else if (statusLampu === lampuHijau.toLowerCase()) {
+            alert("Lampu hijau, silakan jalan.");
+        } else {
+            alert("Status lampu tidak dikenali. Silakan masukkan 'merah', 'kuning', atau 'hijau'.");
+        }
+        // location.reload();
+    </script>
+</body>
+</html>

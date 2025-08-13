@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Number</title>
+</head>
+<body>
+ <script>
+    let number;
+    number = 42; // inisialisasi variable number dengan nilai 42
+    const anotherNumber = number + 30.8; // penambahan nilai number dengan 30.8
+    const smallNumber = -3.7e-3; // inisialisasi variable smallNumber dengan nilai -3.7 * 10^-3
+    const bigNumber = 5.2e6; // inisialisasi variable bigNumber dengan nilai 5.2 * 10^6
+    const manyDigits = 3_530_755.383_725; // inisialisasi variable manyDigits dengan nilai 3.530755383725
+    document.write("First number: " + number + "<br>"); // menampilkan nilai number
+    document.write("Another number: " + anotherNumber + "<br>"); // menampilkan nilai anotherNumber
+    document.write("Addition incorrect: " + anotherNumber + 25 + "<br>"); // menampilkan hasil penambahan anotherNumber dengan 25, ini akan menghasilkan string karena operator + digunakan dalam penjumlahan string
+    document.write("Addition correct: " + (anotherNumber + 25) + "<br>"); // menampilkan hasil penambahan anotherNumber dengan 25, ini akan menghasilkan angka karena operator + digunakan dalam penjumlahan angka
+    document.write("Small number: " + smallNumber + "<br>"); // menampilkan nilai smallNumber
+    document.write("Big number: " + bigNumber + "<br>"); // menampilkan nilai bigNumber
+    document.write("Many digits: " + manyDigits + "<br>"); // menampilkan nilai manyDigits
+
+    
+ </script>
+</body>
+</html>

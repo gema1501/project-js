@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Operasi aritmatika</title>
+</head>
+<body>
+    <!-- <div>
+        <button>(</button>
+    <button>)</button>
+    <button>**</button>
+    </div> -->
+    <!-- <button>1</button>
+    <button></button>
+    <sup>1</sup>
+    <sub>2</sub> -->
+
+    <form id="form">
+    </form>
+    <p id="hasil"></p>
+    
+    <script>
+        const listAngka = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        const listOperator = ["+", "-", "*", "/", "%", "**"];
+        const form = document.getElementById("form");
+        const buttonPenjumlahan = document.getElementById("penjumlahan");
+        for(let i = 0; i < listAngka.length; i++) {
+            if(i % 3 === 0 && i !== 0) {
+                document.write("<br>");
+            }
+            const button = document.createElement("button");
+            button.textContent = listAngka[i];
+            button.value = listAngka[i];
+            form.appendChild(button);
+        }
+        for(let i = 0; i < listOperator.length; i++) {
+            if(i % 3 === 0 && i !== 0) {
+                document.write("<br>");
+            }
+            const button = document.createElement("button");
+            button.textContent = listOperator[i];
+            button.id = listOperator[i];
+            form.appendChild(button);
+        }
+        const buttonSubmit = document.createElement("button");
+        buttonSubmit.textContent = "=";
+        buttonSubmit.id = "submit";
+        form.appendChild(buttonSubmit);
+
+        let bilanganPertama = [];
+        form.addEventListener("click", (e) => {
+            e.preventDefault();
+            
+            bilanganPertama.push(e.target.value);
+            console.log(bilanganPertama);
+            if(e.target.id === "+") {
+
+                let convertedBilanganPertama = bilanganPertama.join("");
+                // const hasil = eval(convertedBilanganPertama);
+                console.log(convertedBilanganPertama);
+                
+            } else if(e.target.id === "submit") {
+                const hasil = eval(bilanganPertama.join(""));
+                document.getElementById("hasil").textContent = "Hasil: " + hasil;
+                bilanganPertama = []; // Reset after calculation
+            }
+            
+        })
+    </script>
+</body>
+</html>

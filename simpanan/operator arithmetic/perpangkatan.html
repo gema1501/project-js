@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpangkatan</title>
+</head>
+<body>
+    <script>
+        const bilangan = Number(prompt("Masukkan bilangan: "));
+        const pangkat = Number(prompt("Masukkan pangkat: "));
+        
+        if (pangkat < 0) {
+            alert("Pangkat tidak boleh negatif.");
+        } else {
+            // const hasilPerpangkatan = Math.pow(bilangan, pangkat);
+            // Atau bisa juga menggunakan:
+            const hasilPerpangkatan = bilangan ** pangkat;
+            alert("Hasil perpangkatan: " + hasilPerpangkatan);
+            document.write("<h1>Hasil perpangkatan: " + hasilPerpangkatan + "</h1><br>");
+        }
+    </script>
+</body>
+</html>

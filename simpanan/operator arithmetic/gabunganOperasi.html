@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabungan Operasi aritmatika</title>
+</head>
+<body>
+    <form id="form">
+        <input type="text" id="inputPertama" placeholder="Masukkan bilangan pertama">
+        <input type="text" id="inputKedua" placeholder="Masukkan bilangan kedua">
+        <button id="penjumlahan">+</button>
+        <button id="pengurangan">-</button>
+        <button id="perkalian">*</button>
+        <button id="pembagian">/</button>
+        <button id="modulus">%</button>
+        <button id="pangkat">**</button>
+        <button id="submit">=</button>
+    </form>
+    <script>
+        const form = document.getElementById("form");
+        form.addEventListener("click", (e) => {
+            e.preventDefault();
+            const inputPertama = document.getElementById("inputPertama").value;
+            const inputKedua = document.getElementById("inputKedua").value;
+            const hasilElement = document.createElement("div");
+
+            switch (e.target.id) {
+                case "penjumlahan":
+                    hasil = parseFloat(inputPertama) + parseFloat(inputKedua);
+                    hasilElement.textContent = "Hasil penjumlahan: " + hasil;
+                    document.body.appendChild(hasilElement);
+                    break;
+                case "pengurangan":
+                    hasil = parseFloat(inputPertama) - parseFloat(inputKedua);
+                    hasilElement.textContent = "Hasil pengurangan: " + hasil;
+                    document.body.appendChild(hasilElement);
+                    break;
+                case "perkalian":
+                    hasil = parseFloat(inputPertama) * parseFloat(inputKedua);
+                    hasilElement.textContent = "Hasil perkalian: " + hasil;
+                    document.body.appendChild(hasilElement);
+                    break;
+                case "pembagian":
+                    hasil = parseFloat(inputPertama) / parseFloat(inputKedua);
+                    hasilElement.textContent = "Hasil pembagian: " + hasil;
+                    document.body.appendChild(hasilElement);
+                    break;
+                case "modulus":
+                    hasil = parseFloat(inputPertama) % parseFloat(inputKedua);
+                    hasilElement.textContent = "Hasil modulus: " + hasil;
+                    document.body.appendChild(hasilElement);
+                    break;
+                case "pangkat":
+                    hasil = Math.pow(parseFloat(inputPertama), parseFloat(inputKedua));
+                    hasilElement.textContent = "Hasil pangkat: " + hasil;
+                    document.body.appendChild(hasilElement);
+                    break;
+                default:
+                    hasil = "Operasi tidak dikenali";
+            }
+           
+        });
+    </script>
+</body>
+</html>

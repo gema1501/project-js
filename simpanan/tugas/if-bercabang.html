@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas if bercabang</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Jenis Kelamin</th>
+                <th>Status</th>
+                <th>Keterangan</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    <script>
+        // tugas menentukan status
+        const nama = prompt("Masukkan nama Anda:");
+        const kelamin = prompt("Masukkan jenis kelamin Anda (Pria/Wanita):").toLowerCase();
+        const status = prompt("Masukkan status Anda (Sendiri/Nikah/Cerai):").toLowerCase();
+
+        const tableBody = document.querySelector("tbody");
+
+        let input = { nama, kelamin, status };
+        let hasil = []
+        if(kelamin === "pria") {
+            if(status === "sendiri") {
+                input.keterangan = "Perjaka";
+            } else if(status === "nikah") {
+                input.keterangan = "Kawin";
+            } else if(status === "cerai") {
+                input.keterangan = "Duda";
+            } else {
+                document.write("Status tidak dikenali.");
+            }
+        } else if(kelamin === "wanita") {
+            if(status === "sendiri") {
+                input.keterangan = "Perawan";
+            } else if(status === "nikah") {
+                input.keterangan = "kawin";
+            } else if(status === "cerai") {
+                input.keterangan = "Janda";
+            } else {
+                document.write("Status tidak dikenali.");
+            }
+        } else {
+            document.write("Jenis kelamin tidak dikenali.");
+        }
+        if(localStorage.getItem("hasil")) {
+            hasil = JSON.parse(localStorage.getItem("hasil"));
+            if(input.nama === "" || input.kelamin === "" || input.status === "") {
+                alert("Input tidak boleh kosong!");
+            } else {
+                hasil.push(input);
+                localStorage.setItem("hasil", JSON.stringify(hasil));
+            }
+        } else {
+            hasil.push(input);
+            localStorage.setItem("hasil", JSON.stringify(hasil));
+        }
+
+        hasil.forEach(item => {
+            const tr = document.createElement("tr");
+            tableBody.appendChild(tr);
+            const tdNama = document.createElement("td");
+            const tdKelamin = document.createElement("td");
+            const tdStatus = document.createElement("td");
+            const tdKeterangan = document.createElement("td");
+            tdNama.textContent = item.nama;
+            tdKelamin.textContent = item.kelamin;
+            tdStatus.textContent = item.status;
+            tdKeterangan.textContent = item.keterangan;
+
+            tr.appendChild(tdNama);
+            tr.appendChild(tdKelamin);
+            tr.appendChild(tdStatus);
+            tr.appendChild(tdKeterangan);
+        });
+
+        
+
+
+        
+
+        
+    </script>
+</body>
+</html>

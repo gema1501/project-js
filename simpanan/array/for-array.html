@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS for array</title>
+</head>
+<body>
+    <script>
+        let person;
+        person = ["Peter", "Monica", "John"];
+        // index    0        1        2
+
+        document.write("<table border='1'>");
+        for(let z = 0; z < 3; z++) {
+            document.write("<tr><td>" + person[z] + "</td></tr>");
+        }
+        document.write("</table>");
+        document.write("<br>");
+
+        const age = [["Peter", 37], ["Monica", 32], ["John", 30]];
+        document.write("<table border='1'>");
+        for(let z = 0; z < 3; z++) {
+            document.write("<tr>");
+            for(let s = 0; s < 2; s++) {
+                document.write("<td>" + age[z][s] + "</td>");
+            }
+            document.write("</tr>");
+        };
+        document.write("</table>");
+    </script>
+</body>
+</html>

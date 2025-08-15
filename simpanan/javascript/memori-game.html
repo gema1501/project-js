@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Memori game</title>
+</head>
+<body>
+    <script>
+        let counter = 0, length = 3, input, output = "";
+        alert("Memory training:\n\nMemorize the number sequence that appear and then enter them. First three sets of three digits appear, then three sets of four digits and so on. As soon as you have entered a sequence of digits incorrectly, you have reached the end of the training and will be scored. when you refresh the website, the training starts again from the beginning.");
+        do {
+            counter++; // 1
+            if(counter > 3) { // false
+                length++;
+                counter = 1;
+            }
+            text = "";
+            for(let i = 1; i <= length; i++) {
+                text += Math.floor(Math.random() * 10);
+            } 
+            alert("Sequence of digits: " + text);
+            input = prompt("Your input");
+            output += text + "<br>";
+        } while(input == text);
+        let quantity = length - 1;
+        if(quantity < 3) {
+            quantity = 0;
+        }
+        output += "You were able to memorize " + quantity + " digits";
+        document.write(output);
+    </script>
+</body>
+</html>
